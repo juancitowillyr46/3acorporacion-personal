@@ -37,7 +37,7 @@ class Employee {
         )";
         $stmt= $this->mbd->prepare($sql);
         $stmt->execute($data);
-        return json_encode(["data" => ["id" => $this->mbd->lastInsertId()], "message" => "Registrado correctamente"]);
+        return json_encode(["data" => ["id" => $this->mbd->lastInsertId()], "message" => "Registrado correctamente", "success" => true, "errors" => []]);
     }
 
     public function update($data, $id) {
@@ -58,9 +58,9 @@ class Employee {
                 WHERE id = :id";
                 $stmt= $this->mbd->prepare($sql);
                 $stmt->execute($data);
-                return json_encode(["data" => ["id" => $id], "message" => "Actualizado correctamente"]);
+                return json_encode(["data" => ["id" => $id], "message" => "Actualizado correctamente", "success" => true, "errors" => []]);
             } else {
-                return json_encode(["data" => [], "message" => "No encontrado"]);
+                return json_encode(["data" => [], "message" => "No encontrado", "success" => false, "errors" => []]);
             }
         }
     }
@@ -73,9 +73,9 @@ class Employee {
                 $sql = "DELETE FROM employee WHERE id = :id";
                 $stmt= $this->mbd->prepare($sql);
                 $stmt->execute(['id' => $id]);
-                return json_encode(["data" => ["id" => $id], "message" => "Eliminado correctamente"]);
+                return json_encode(["data" => ["id" => $id], "message" => "Eliminado correctamente", "success" => true, "errors" => []]);
             } else {
-                return json_encode(["data" => [], "message" => "No encontrado"]);
+                return json_encode(["data" => [], "message" => "No encontrado", "success" => false, "errors" => []]);
             }
         }
 
@@ -95,12 +95,81 @@ class Employee {
                 $sth = $this->mbd->prepare("SELECT * FROM employee WHERE id=" . $id);
                 $sth->execute();
                 $result = $sth->fetch(\PDO::FETCH_ASSOC);
-                return json_encode(["data" => $result, "message" => "ok"]);
+                return json_encode(["data" => $result, "message" => "ok", "success" => true, "errors" => []]);
             } else {
-                return json_encode(["data" => $result, "message" => "No encontrado"]);
+                return json_encode(["data" => $result, "message" => "No encontrado", "success" => false, "errors" => []]);
             }
         }
         
+    }
+
+    public function uploadImage($lastFileDelete) {
+
+        $pathRoot = $_SERVER['DOCUMENT_ROOT'].'/uploads/';
+ 
+        $uploadDirectoryRoot = "uploads/";
+
+        if(!empty($lastFileDelete)){
+
+            $lastFileDelete = $pathRoot.$lastFileDelete;
+            if (file_exists($lastFileDelete)) {
+                unlink($lastFileDelete);
+            }
+            
+        }
+
+        $currentDirectory = $pathRoot;
+
+        $errors = []; // Store errors here
+
+        $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
+
+        $fileName = $_FILES['file']['name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileTmpName  = $_FILES['file']['tmp_name'];
+        $fileType = $_FILES['file']['type'];
+        $tmp = explode('.', $fileName);
+        $fileExtension = end($tmp);
+
+        $fecha = new DateTime();
+
+        $fileName = str_replace($fileName, $fecha->getTimestamp().".".$fileExtension, basename($fileName));
+
+        $uploadPath = $currentDirectory . basename($fileName); 
+
+        $message = "";
+        $result = [];
+        $success = false;
+
+        if (isset($_POST['submit'])) {
+
+            if (! in_array($fileExtension,$fileExtensionsAllowed)) {
+                $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+            }
+
+            if ($fileSize > 4000000) {
+                $errors[] = "File exceeds maximum size (4MB)";
+            }
+
+            if (empty($errors)) {
+                $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+                if ($didUpload) {
+                    $message = "The file " . basename($fileName) . " has been uploaded";
+                    $result = ["photo_url" => $fileName];
+                    $success = true;
+                } else {
+                    $errors[] = "An error occurred. Please contact the administrator.";
+                }
+            } else {
+                foreach ($errors as $error) {
+                    $errors[] = $error . "These are the errors" . "\n";
+                }
+            }
+
+        }
+
+        return json_encode(["data" => $result, "message" => $message, "success" => $success, "errors" => $errors]);
     }
 
 }

@@ -3,7 +3,7 @@ include_once('../../includes/db.class.php');
 include_once('../../entities/employee.class.php');
 
 $inputJSON = file_get_contents('php://input');
-if(!empty($inputJSON) && !is_null($inputJSON)) {
+if(!empty($inputJSON) && !is_null($inputJSON) && $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $data = json_decode($inputJSON, TRUE);
     header('Content-Type: application/json; charset=utf-8');
 

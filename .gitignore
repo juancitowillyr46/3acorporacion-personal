@@ -7,3 +7,6 @@ logs
 environments
 environments/env.php
 environments/env.prod.php
+*.jpg
+*.png
+*.jpeg

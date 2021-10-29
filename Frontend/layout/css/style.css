@@ -162,7 +162,7 @@
     /*left: 50%;
     top: 50%;*/
     /*transform: translate(-50%, -50%);*/
-    width: 40%;
+    width: 45%;
     height: auto;
     margin: 0 auto;
     margin-top: 2em;
@@ -325,7 +325,7 @@
     text-align: center;
 }
 
-table span {
+.table-a span {
     font-family: 'Arial';
     font-size: 12px;
     font-style: normal;
@@ -361,7 +361,50 @@ table .text-type-a {
     
     color: #000000;
     text-transform: uppercase;
+    margin-left: 35px;
 }
+
+table .state-btn-a {
+    width: 113px;
+    height: 40px;
+    background: rgba(137, 230, 146, 0.5);
+    border: 2px solid #0FAC1E;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+table .state-msg-a {
+    color: #0FAC1E;
+}
+table .state-btn-b {
+    width: 150px;
+    height: 40px;
+    background: #FFACAC;
+    border: 2px solid #FF8383;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+table .state-msg-b {
+    color: #FF8383;
+}
+table .state-btn-c {
+    width: 170px;
+    height: 40px;
+    background: #C1E1FF;
+    border: 2px solid #83C3FF;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+table .state-msg-c {
+    color: #83C3FF;
+}
+
+
 
 .wrp-grid {
     width: 500px;
@@ -379,6 +422,7 @@ table .text-type-a {
     border-collapse: separate;
     border-spacing: 0 25px;
     margin: 0 auto;
+    margin-left: 50px;
 }
 
 .table-b .align-right{
@@ -436,6 +480,37 @@ table button {
     text-transform: uppercase;
 }
 
-.wrp-name{
+.wrp-name{ 
     text-align: center;
+    padding: 27px 0px 25px 0px;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.image-employee{
+    width: 350px;
+}
+
+.wrp-contact {
+    width: 646px; 
+    border-top: 1px solid #000000;
+    margin-left: 50px;
+    padding-top: 39px;
+}
+
+.text-a{
+    width: 462px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
 }

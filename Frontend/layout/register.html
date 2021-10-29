@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" type="text/css"type="text/css">
+</head>
+<body>
+    <div class="wrp-main">
+        <div class="wrapper-content">
+            <div class="wrp-padding-logo-a">
+                <img src="./imgs/logo.jpg">
+            </div>
+            <div class="wrp-padding-title-a">
+                <div class="title-type-a">Acceso</div>
+                <div class="title-type-b">Personal autorizado</div>
+            </div>
+            <div class="wrp-message-a">
+                INGRESAR DATOS DEL TRABAJADOR
+            </div>
+            <div>
+                <form>
+                    <div class="wrp-padding-input-c">
+                        <label for="fullname" class="label-type-a label-padding-a">Nombres y apellidos</label>
+                        <input id="fullname" type="text" class="input-type-a">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="file" class="label-type-a label-padding-a">Subir foto</label>
+                        <input id="file" type="file" class="custom-file-input">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="dni" class="label-type-a label-padding-a">Dni</label>
+                        <input id="dni" type="text" class="input-type-a">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="fechactividad" class="label-type-a label-padding-a">Fecha actividad</label>
+                        <input id="fechactividad" type="text" class="input-type-a">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="puesto" class="label-type-a label-padding-a">Puesto</label>
+                        <input id="puesto" type="text" class="input-type-a">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="comentarios" class="label-type-a label-padding-a">Comentarios</label>
+                        <input id="comentarios" type="text" class="input-type-a">
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="comentarios" class="label-type-a label-padding-a">estado</label>
+                        <div class="radio-btn-group">
+                            <div class="radio radioa">
+                                <input type="radio" name="radio" value="click_me" checked="checked" id="estado1">
+                                <label for="estado1">Activo</label>
+                            </div>
+                            <div class="radio radiob">
+                                <input type="radio" name="radio" value="click_me" id="estado2">
+                                <label for="estado2">Vacaciones</label>
+                            </div>
+                            <div class="radio radioc">
+                                <input type="radio" name="radio" value="click_me" id="estado3">
+                                <label for="estado3">Inactivo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrp-padding-input-c">
+                        <label for="comentarios" class="label-type-a label-padding-c label-position-a">ingresar fecha</label>
+                        <div class="label-position-a">
+                            <div class="wrp-padding-input-c ">
+                                <label for="dni" class="label-type-a label-padding-a align-center-a">De</label>
+                                <input id="dni" type="text" class="input-type-b">
+                            </div>
+                            <div class="wrp-padding-input-c">
+                                <label for="dni" class="label-type-a label-padding-a align-center-a">Hasta</label>
+                                <input id="dni" type="text" class="input-type-b">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrp-padding-input-c wrp-btn-a">
+                        <label for="comentarios" class="label-type-a label-padding-a">generar qr</label>
+                        <div>
+                            <img src="./imgs/qr-example.jpg">
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="btn-a">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

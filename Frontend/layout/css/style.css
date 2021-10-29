@@ -1,0 +1,441 @@
+@font-face {
+    font-family: "SF Pro Display Semibold";
+    font-weight: 600;
+    src: url('../fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+    url('../fonts/SFProDisplay-Semibold.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'SF Pro Display Thin';
+    src: url('../fonts/SFProDisplay-Thin.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Thin.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} 
+
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} 
+
+.title-type-a {
+    font-family: 'Arial';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20.7px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    text-transform: uppercase;
+}
+.wrp-logo{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title-type-b {
+    text-align: left;
+    font-family: 'Arial';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 13.8px;
+    letter-spacing: 0.05em;
+    color:#38bee8;
+    text-transform: uppercase;
+}
+
+.label-type-a {
+    display: block;
+    font-family: 'Arial';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.label-padding-a {
+    padding: 0px 11px 11px 0px;
+}
+
+.label-padding-b {
+    padding: 32px 11px 11px 0px;
+}
+
+.label-padding-c {
+    padding: 0px 18px 11px 0px;
+}
+
+.input-type-a{
+    width: 299px;
+    height: 40px;
+    border: 0.5px solid #B0B0B0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.input-type-b{
+    width: 83px;
+    height: 20px;
+    border: 0.5px solid #B0B0B0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.wrapper-login {
+    width: 50%;/*47%*/
+    margin: 0 auto;
+}
+
+.wrapper-content{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.wrapper-content-detail{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrp-padding-input-a {
+    padding-bottom: 28px;
+}
+
+.wrp-padding-input-b {
+    padding-bottom: 22px;
+}
+
+.wrp-padding-input-c {
+    padding-bottom: 33px;
+}
+
+.wrp-padding-title-a {
+    padding-bottom: 33px;
+}
+
+.wrp-padding-logo-a{
+    padding-bottom: 11px;
+    text-align: left;
+}
+
+.wrp-padding-logo-b{
+    padding-bottom: 11px;
+    text-align: center;
+}
+
+.wrp-btn-a {
+    padding-bottom: 84px;
+}
+
+.btn-a {
+    height: 40px;
+    width: 181px;
+    border-radius: 0px;
+    background: #131313;
+    font-family: 'SF Pro Display Regular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    outline: none;
+    box-sizing: border-box;
+    border: 0;
+    text-transform: uppercase;
+}
+
+.wrp-main {
+    position: relative;
+    /*left: 50%;
+    top: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2em;
+    /*padding: 20px;*/
+}
+
+.wrp-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: auto;
+    
+}
+
+.wrp-message-a {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    padding-bottom: 65px;
+}
+
+.wrp-message-b {
+    display: block;
+    font-family: 'Arial';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.custom-file-input {
+    width: 299px;
+    height: 40px;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  .custom-file-input::before {
+    width: 299px;
+    height: 40px;
+    content: 'Examinar';
+    display: inline-block;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    background: #E5E5E5;
+    border: 0.5px solid #B0B0B0;
+    box-sizing: border-box;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+  }
+
+
+  .radio-btn-group {
+      display: inline-flex;
+  }
+
+  .radio-btn-group .radio input[type=radio]{
+      /*visibility: hidden;*/
+      display: none;
+  }
+
+    .radio-btn-group .radio input[type=radio]:checked + label {
+        border: 2px solid #0FAC1E;
+    }
+
+.radio > label {
+    margin-right: 9px;
+}
+
+.radioa > label {
+    width: 74px;
+    height: 40px;
+    background: rgba(137, 230, 146, 0.5);
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.radiob > label {
+    width: 118px;
+    height: 40px;
+    background: #C1E1FF;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.radioc > label {
+    width: 98px;
+    height: 40px;
+    background: #FFACAC;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.label-position-a {
+    display: inline-flex;
+    vertical-align: middle
+}
+
+.label-position-a .wrp-padding-input-c{
+    margin-right: 5px;
+}
+
+.align-center-a {
+    text-align: center;
+}
+
+table span {
+    font-family: 'Arial';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+    padding-right: 39px;
+}
+
+table .label-type-c {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #B0B0B0;
+    text-transform: uppercase;
+}
+
+table .text-type-a {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.wrp-grid {
+    width: 500px;
+    padding-top: 25px;
+}
+
+.table-a {
+    width: auto;
+    border-collapse: separate;
+    border-spacing: 0 35px;
+}
+
+.table-b {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 25px;
+    margin: 0 auto;
+}
+
+.table-b .align-right{
+    text-align: right;
+}
+
+.table-b .align-left{
+    text-align: left;
+}
+
+table button {
+    width: 121px;
+    height: 40px;
+    font-family: 'SF Pro Display Regular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+table button {
+    margin-right: 14px;
+    /*margin-bottom: 25px;*/
+}
+
+.btn-b {
+    color: #000000;
+    border: 0.5px solid #B0B0B0;
+    background: #FFFFFF;
+}
+
+.btn-c {
+    color: #FFACAC;
+    border: 0.5px solid #FFACAC;
+    background: #FFFFFF;
+}
+
+.label-type-b {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.wrp-name{
+    text-align: center;
+}

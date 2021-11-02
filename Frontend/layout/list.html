@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <base href="">
-    <title>Login</title>
+    <title>Colaboradores</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="./imgs/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/app-environment.js"></script>
+    <script type="text/javascript" src="./js/app-utility.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.serializejson.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="./js/app-http.js"></script>
+    <script type="text/javascript" src="./js/app-employee-list.js"></script>
     <link href="./css/style.css" rel="stylesheet" type="text/css"type="text/css">
 </head>
 <body>
     <div class="wrp-main">
-        <div class="wrapper-content">
+        <div class="wrapper-content-list">
             <div class="wrp-padding-logo-a">
                 <img src="./imgs/logo.jpg">
             </div>
@@ -19,24 +29,17 @@
                 <div class="title-type-b">Personal autorizado</div>
             </div>
             <div class="wrp-message-b">
-                LISTA DE TRABAJAODRES
+                LISTA DE TRABAJADORES 
             </div>
-            <div class="wrp-grid">
-                <table width="100" class="table-a">
-                    <tr>
-                        <td><span>01 - JUAN RODAS</span></td>
-                        <td><button class="btn-b">editar</button><button class="btn-c">borrar</button></td>
-                    </tr>  
-                    <tr>
-                        <td><span>02 - JUAN RODAS</span></td>
-                        <td><button class="btn-b">editar</button><button class="btn-c">borrar</button></td>
-                    </tr>  
-                </table>
-                  
+            
+            
+            <div class="wrp-grid wrp-grid-list">
+                <div class="wrp-actions-a">
+                    <span class="actions"><a href="http://localhost:8084/register.html?id=0" class="btn-b">nuevo</a></span>
+                </div>
+                <table width="100" class="table-a"></table>
             </div>
         </div>
     </div>
-
-
 </body>
 </html>

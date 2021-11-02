@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <base href="">
-    <title>Login</title>
+    <title>Inicio de sesión</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="./imgs/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/app-environment.js"></script>
+    <script type="text/javascript" src="./js/app-utility.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.serializejson.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="./js/app-http.js"></script>
+    <script type="text/javascript" src="./js/app-login.js"></script>
     <link href="./css/style.css" rel="stylesheet" type="text/css"type="text/css">
 </head>
 <body>
@@ -19,17 +29,17 @@
                 <div class="title-type-b">Personal autorizado</div>
             </div>
             <div>
-                <form>
+                <form method="post" id="frm-login">
                     <div class="wrp-padding-input-a">
                         <label for="email" class="label-type-a label-padding-a">Correo</label>
-                        <input id="email" type="email" class="input-type-a">
+                        <input id="email" type="email" class="input-type-a" name="username">
                     </div>
                     <div class="wrp-padding-input-b">
                         <label for="password" class="label-type-a label-padding-a">Contraseña</label>
-                        <input id="password" type="password" class="input-type-a">
+                        <input id="password" type="password" class="input-type-a" name="password">
                     </div>
                     <div>
-                        <button class="btn-a">INGRESAR</button>
+                        <button class="btn-a btn" type="submit">INGRESAR</button>
                     </div>
                 </form>
             </div>

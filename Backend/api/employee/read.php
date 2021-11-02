@@ -1,22 +1,22 @@
 <?php
+include_once('../../includes/header.php');
 include_once('../../includes/db.class.php');
 include_once('../../entities/employee.class.php');
+include_once('../../entities/utility.class.php');
 
-$inputJSON = file_get_contents('php://input');
-if(!empty($inputJSON) && !is_null($inputJSON) && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $data = json_decode($inputJSON, TRUE);
-    header('Content-Type: application/json; charset=utf-8');
+if(isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    $data = ["id" => $_GET['id']];
 
     $mypdo = new MyPDO();
     $mbd = $mypdo->getMdb();
 
-    $employee = new Employee($mbd);
+    $utilityObj = new Utility();
+
+    $employee = new Employee($mbd, $utilityObj);
     print $employee->readById($data['id']);
 
 } else {
-    header("HTTP/1.0 404 Not Found");
-    echo "Error";
-    die();
+    print json_encode(["data" => [], "message" => "No permitido", "success" => false, "errors" => [] ]);
 }
 
 

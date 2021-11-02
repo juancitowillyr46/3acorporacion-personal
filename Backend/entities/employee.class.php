@@ -1,8 +1,10 @@
 <?php 
 class Employee {
     private $mbd = "";
-    public function __construct($mbd) {
+    private $utility = "";
+    public function __construct($mbd, $utility = null) {
         try {
+            $this->utility = $utility;
             $this->mbd = $mbd;
         } catch (PDOException $e) { 
             header("HTTP/1.0 404 Not Found");
@@ -82,10 +84,11 @@ class Employee {
     }
 
     public function readAll() {
-        $sth = $this->mbd->prepare("SELECT * FROM employee");
+        $sth = $this->mbd->prepare("SELECT * FROM employee ORDER BY id DESC");
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
-        return json_encode(["data" => $result, "message" => "No encontrado"]);
+        $count = $sth->fetchColumn();
+        return json_encode(["data" => $result, "message" => "N° resultados: " . count($result)]);
     }
 
     public function readById($id) {
@@ -95,15 +98,19 @@ class Employee {
                 $sth = $this->mbd->prepare("SELECT * FROM employee WHERE id=" . $id);
                 $sth->execute();
                 $result = $sth->fetch(\PDO::FETCH_ASSOC);
+
+                $result['state_date_to_format'] = $this->utility->customFormat($result['state_date_to']);
+                $result['state_date_from_format'] = $this->utility->customFormat($result['state_date_from']);
+                $result['activity_from_format'] = $this->utility->customFormat($result['activity_from']);
+
                 return json_encode(["data" => $result, "message" => "ok", "success" => true, "errors" => []]);
             } else {
                 return json_encode(["data" => $result, "message" => "No encontrado", "success" => false, "errors" => []]);
             }
         }
-        
     }
 
-    public function uploadImage($lastFileDelete) {
+    public function uploadImage($lastFileDelete, $filesUpload) {
 
         $pathRoot = $_SERVER['DOCUMENT_ROOT'].'/uploads/';
  
@@ -124,10 +131,10 @@ class Employee {
 
         $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
 
-        $fileName = $_FILES['file']['name'];
-        $fileSize = $_FILES['file']['size'];
-        $fileTmpName  = $_FILES['file']['tmp_name'];
-        $fileType = $_FILES['file']['type'];
+        $fileName = $filesUpload['file']['name'];
+        $fileSize = $filesUpload['file']['size'];
+        $fileTmpName  = $filesUpload['file']['tmp_name'];
+        $fileType = $filesUpload['file']['type'];
         $tmp = explode('.', $fileName);
         $fileExtension = end($tmp);
 

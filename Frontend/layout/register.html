@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <base href="">
-    <title>Login</title>
+    <title>Registro Colaboradores</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="./imgs/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/app-environment.js"></script>
+    <script type="text/javascript" src="./js/app-utility.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.serializejson.js"></script>
+    <link href="./css/sweetalert2.min.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <script type="text/javascript" src="./js/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="./js/app-http.js"></script>
+    <script type="text/javascript" src="./js/app-employee-register.js"></script>
     <link href="./css/style.css" rel="stylesheet" type="text/css"type="text/css">
 </head>
 <body>
@@ -22,69 +32,77 @@
                 INGRESAR DATOS DEL TRABAJADOR
             </div>
             <div>
-                <form>
+                <form id="frm-register">
                     <div class="wrp-padding-input-c">
-                        <label for="fullname" class="label-type-a label-padding-a">Nombres y apellidos</label>
-                        <input id="fullname" type="text" class="input-type-a">
+                        <label for="first_name" class="label-type-a label-padding-a">Nombres y apellidos</label>
+                        <input id="first_name" name="first_name" type="text" class="input-type-a">
+                        <input id="last_name" name="last_name" type="hidden">
+                        <input id="activity_from" name="activity_from" type="hidden" class="input-type-a">
                     </div>
                     <div class="wrp-padding-input-c">
                         <label for="file" class="label-type-a label-padding-a">Subir foto</label>
-                        <input id="file" type="file" class="custom-file-input">
+                        <input id="file" name="file" type="file" class="custom-file-input" >
+                        <input name="photo_url" id="photo_url" type="hidden">
+                        <input name="last_file_delete" id="last_file_delete" value="" type="hidden">
+                        <span class="filename"></span>
                     </div>
                     <div class="wrp-padding-input-c">
-                        <label for="dni" class="label-type-a label-padding-a">Dni</label>
-                        <input id="dni" type="text" class="input-type-a">
+                        <label for="doc_num" class="label-type-a label-padding-a">Dni</label>
+                        <input id="doc_num" name="doc_num" type="text" class="input-type-a">
+                    </div>
+                    <!-- <div class="wrp-padding-input-c">
+                        <label for="activity_from" class="label-type-a label-padding-a">Fecha actividad</label>
+                        
+                    </div> -->
+                    <div class="wrp-padding-input-c">
+                        <label for="job_id" class="label-type-a label-padding-a">Puesto</label>
+                        <input id="job_id" name="job_id" type="text" class="input-type-a">
                     </div>
                     <div class="wrp-padding-input-c">
-                        <label for="fechactividad" class="label-type-a label-padding-a">Fecha actividad</label>
-                        <input id="fechactividad" type="text" class="input-type-a">
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="puesto" class="label-type-a label-padding-a">Puesto</label>
-                        <input id="puesto" type="text" class="input-type-a">
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="comentarios" class="label-type-a label-padding-a">Comentarios</label>
-                        <input id="comentarios" type="text" class="input-type-a">
+                        <label for="comment" class="label-type-a label-padding-a">Comentarios</label>
+                        <input id="comment" name="comment" type="text" class="input-type-a">
                     </div>
                     <div class="wrp-padding-input-c">
                         <label for="comentarios" class="label-type-a label-padding-a">estado</label>
                         <div class="radio-btn-group">
                             <div class="radio radioa">
-                                <input type="radio" name="radio" value="click_me" checked="checked" id="estado1">
-                                <label for="estado1">Activo</label>
+                                <input type="radio" name="state" value="ACTIVO" id="activo" checked>
+                                <label for="activo">Activo</label>
                             </div>
                             <div class="radio radiob">
-                                <input type="radio" name="radio" value="click_me" id="estado2">
-                                <label for="estado2">Vacaciones</label>
+                                <input type="radio" name="state" value="VACACIONES" id="vacaciones">
+                                <label for="vacaciones">Vacaciones</label>
                             </div>
                             <div class="radio radioc">
-                                <input type="radio" name="radio" value="click_me" id="estado3">
-                                <label for="estado3">Inactivo</label>
+                                <input type="radio" name="state" value="INACTIVO" id="inactivo">
+                                <label for="inactivo">Inactivo</label>
                             </div>
                         </div>
                     </div>
                     <div class="wrp-padding-input-c">
-                        <label for="comentarios" class="label-type-a label-padding-c label-position-a">ingresar fecha</label>
+                        <label for="comentarios" class="label-type-a label-padding-d label-position-a">ingresar fecha</label>
                         <div class="label-position-a">
                             <div class="wrp-padding-input-c ">
-                                <label for="dni" class="label-type-a label-padding-a align-center-a">De</label>
-                                <input id="dni" type="text" class="input-type-b">
+                                <label for="state_date_from" class="label-type-a label-padding-a align-center-a">De</label>
+                                <span class="input-container"><input id="state_date_from" name="state_date_from" type="date" class="input-type-b"></span>
                             </div>
                             <div class="wrp-padding-input-c">
-                                <label for="dni" class="label-type-a label-padding-a align-center-a">Hasta</label>
-                                <input id="dni" type="text" class="input-type-b">
+                                <label for="state_date_to" class="label-type-a label-padding-a align-center-a">Hasta</label>
+                                <span class="input-container"><input id="state_date_to" name="state_date_to" type="date" class="input-type-b"></span>
                             </div>
                         </div>
                     </div>
                     <div class="wrp-padding-input-c wrp-btn-a">
                         <label for="comentarios" class="label-type-a label-padding-a">generar qr</label>
                         <div>
-                            <img src="./imgs/qr-example.jpg">
+                            <img id="qr-image-register">
                         </div>
                     </div>
-                    <div class="">
-                        <button class="btn-a">Guardar</button>
+                    <div class="wrp-actions-b">
+                        <span class="actions">
+                            <button type="submit" class="btn-a tbn btn-a-edit">Guardar</button>
+                            <a href="./list.html" class="btn-b tbn">Retornar</a>
+                        </span>
                     </div>
                 </form>
             </div>

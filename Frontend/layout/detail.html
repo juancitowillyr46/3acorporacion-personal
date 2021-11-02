@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="">
+    <title>Colaborador</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="./imgs/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/app-environment.js"></script>
+    <script type="text/javascript" src="./js/app-utility.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.serializejson.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="./js/app-http.js"></script>
+    <script type="text/javascript" src="./js/app-employee-readbyid.js"></script>
+    <link href="./css/style.css" rel="stylesheet" type="text/css"type="text/css">
+</head>
+<body>
+    <div class="wrp-main">
+        <div class="wrp-logo">
+            <div class="wrp-padding-logo-b">
+                <img src="./imgs/logo.jpg">
+            </div>
+        </div>
+        
+        <div class="wrapper-content-detail">
+            
+            <div class="wrp-detail">
+                <img src="" class="image-employee" id="photo_url">
+                <div class="wrp-name">
+                    <div class="label-type-b" id="first_name"></div>
+                </div>
+                <table width="100" class="table-b">
+                    <tr>
+                        <td class="align-right"><span class="label-type-c">estado</span></td>
+                        <td class="align-left"><span class="text-type-a " id="state">activo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="align-right"><span class="label-type-c">dni</span></td>
+                        <td class="align-left"><span class="text-type-a" id="doc_num"></span></td>
+                    </tr>
+                    
+                    <!-- Activo -->
+                    <tr class="state_activo">
+                        <td class="align-right"><span class="label-type-c">fecha ingreso</span></td>
+                        <td class="align-left"><span class="text-type-a" id="state_date_from_format"></span></td>
+                    </tr>
+
+                    <!-- Inactivo, Vacaciones  -->
+                    <tr class="state_wrp">
+                        <td class="align-right"><span class="label-type-c state_label_from"></span></td>
+                        <td class="align-left"><span class="text-type-a" id="state_date_from_format"></span></td>
+                    </tr>
+                    <tr class="state_wrp">
+                        <td class="align-right"><span class="label-type-c state_label_to"></span></td>
+                        <td class="align-left"><span class="text-type-a" id="state_date_to_format"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="align-right"><span class="label-type-c">puesto</span></td>
+                        <td class="align-left"><span class="text-type-a" id="job_id"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="align-right"><span class="label-type-c">comentarios</span></td>
+                        <td class="align-left"><span class="text-type-a" id="comment"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="align-right vertical-align-top"><span class="label-type-c">qr</span></td>
+                        <td class="align-left">
+                            <span class="text-type-a qr-border">
+                                <img id="qr-image" src="" alt="">
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="wrp-contact" >
+                
+                <div class="text-a">
+                    PARA MAYOR INFORMACIÓN  COMUNICARSE AL
+                    000000000000
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -88,7 +88,7 @@ class Employee {
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
         $count = $sth->fetchColumn();
-        return json_encode(["data" => $result, "message" => "N° resultados: " . count($result)]);
+        return json_encode(["data" => $result, "message" => "N° resultados: " . count($result)]);;
     }
 
     public function readById($id) {

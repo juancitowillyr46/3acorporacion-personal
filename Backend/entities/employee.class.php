@@ -84,7 +84,7 @@ class Employee {
     }
 
     public function readAll() {
-        $sth = $this->mbd->prepare("SELECT * FROM employee ORDER BY id DESC");
+        $sth = $this->mbd->prepare("SELECT id, first_name FROM employee ORDER BY id DESC");
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
         $count = $sth->fetchColumn();

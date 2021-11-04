@@ -25,87 +25,95 @@
                 <img src="./imgs/logo.jpg">
             </div>
             <div class="wrp-padding-title-a">
-                <div class="title-type-a">Acceso</div>
-                <div class="title-type-b">Personal autorizado</div>
+                <div class="wrp-session">
+                    <div class="title-type-a">Acceso</div>
+                    <div class="title-type-b">Personal autorizado</div>
+                </div>
+                <div class="wrp-session-logout">
+                    <a href="./login.html" class="btn-logout">Cerrar sesión</a>
+                </div>
             </div>
-            <div class="wrp-message-a">
-                INGRESAR DATOS DEL TRABAJADOR
-            </div>
-            <div>
-                <form id="frm-register">
-                    <div class="wrp-padding-input-c">
-                        <label for="first_name" class="label-type-a label-padding-a">Nombres y apellidos</label>
-                        <input id="first_name" name="first_name" type="text" class="input-type-a">
-                        <input id="last_name" name="last_name" type="hidden">
-                        <input id="activity_from" name="activity_from" type="hidden" class="input-type-a">
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="file" class="label-type-a label-padding-a">Subir foto</label>
-                        <input id="file" name="file" type="file" class="custom-file-input" >
-                        <input name="photo_url" id="photo_url" type="hidden">
-                        <input name="last_file_delete" id="last_file_delete" value="" type="hidden">
-                        <span class="filename"></span>
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="doc_num" class="label-type-a label-padding-a">Dni</label>
-                        <input id="doc_num" name="doc_num" type="text" class="input-type-a">
-                    </div>
-                    <!-- <div class="wrp-padding-input-c">
-                        <label for="activity_from" class="label-type-a label-padding-a">Fecha actividad</label>
-                        
-                    </div> -->
-                    <div class="wrp-padding-input-c">
-                        <label for="job_id" class="label-type-a label-padding-a">Puesto</label>
-                        <input id="job_id" name="job_id" type="text" class="input-type-a">
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="comment" class="label-type-a label-padding-a">Comentarios</label>
-                        <input id="comment" name="comment" type="text" class="input-type-a">
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="comentarios" class="label-type-a label-padding-a">estado</label>
-                        <div class="radio-btn-group">
-                            <div class="radio radioa">
-                                <input type="radio" name="state" value="ACTIVO" id="activo" checked>
-                                <label for="activo">Activo</label>
-                            </div>
-                            <div class="radio radiob">
-                                <input type="radio" name="state" value="VACACIONES" id="vacaciones">
-                                <label for="vacaciones">Vacaciones</label>
-                            </div>
-                            <div class="radio radioc">
-                                <input type="radio" name="state" value="INACTIVO" id="inactivo">
-                                <label for="inactivo">Inactivo</label>
+            <div class="wrp-white">
+                <div class="wrp-message-a">
+                    INGRESAR DATOS DEL TRABAJADOR
+                </div>
+                <div >
+                    <form id="frm-register">
+                        <div class="wrp-padding-input-c">
+                            <label for="first_name" class="label-type-a label-padding-a">Nombres y apellidos</label>
+                            <input id="first_name" name="first_name" type="text" class="input-type-a">
+                            <input id="last_name" name="last_name" type="hidden">
+                            <input id="activity_from" name="activity_from" type="hidden" class="input-type-a">
+                        </div>
+                        <div class="wrp-padding-input-c">
+                            <label for="file" class="label-type-a label-padding-a">Subir foto</label>
+                            <input id="file" name="file" type="file" class="custom-file-input" >
+                            <input name="photo_url" id="photo_url" type="hidden">
+                            <input name="last_file_delete" id="last_file_delete" value="" type="hidden">
+                            <span class="filename"></span>
+                        </div>
+                        <div class="wrp-padding-input-c">
+                            <label for="doc_num" class="label-type-a label-padding-a">Dni</label>
+                            <input id="doc_num" name="doc_num" type="text" class="input-type-a">
+                        </div>
+                        <!-- <div class="wrp-padding-input-c">
+                            <label for="activity_from" class="label-type-a label-padding-a">Fecha actividad</label>
+                            
+                        </div> -->
+                        <div class="wrp-padding-input-c">
+                            <label for="job_id" class="label-type-a label-padding-a">Puesto</label>
+                            <input id="job_id" name="job_id" type="text" class="input-type-a">
+                        </div>
+                        <div class="wrp-padding-input-c">
+                            <label for="comment" class="label-type-a label-padding-a">Comentarios</label>
+                            <input id="comment" name="comment" type="text" class="input-type-a">
+                        </div>
+                        <div class="wrp-padding-input-c">
+                            <label for="comentarios" class="label-type-a label-padding-a">estado</label>
+                            <div class="radio-btn-group">
+                                <div class="radio radioa">
+                                    <input type="radio" name="state" value="ACTIVO" id="activo" checked>
+                                    <label for="activo">Activo</label>
+                                </div>
+                                <div class="radio radiob">
+                                    <input type="radio" name="state" value="VACACIONES" id="vacaciones">
+                                    <label for="vacaciones">Vacaciones</label>
+                                </div>
+                                <div class="radio radioc">
+                                    <input type="radio" name="state" value="INACTIVO" id="inactivo">
+                                    <label for="inactivo">Inactivo</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="wrp-padding-input-c">
-                        <label for="comentarios" class="label-type-a label-padding-d label-position-a">ingresar fecha</label>
-                        <div class="label-position-a">
-                            <div class="wrp-padding-input-c ">
-                                <label for="state_date_from" class="label-type-a label-padding-a align-center-a">De</label>
-                                <span class="input-container"><input id="state_date_from" name="state_date_from" type="date" class="input-type-b"></span>
-                            </div>
-                            <div class="wrp-padding-input-c">
-                                <label for="state_date_to" class="label-type-a label-padding-a align-center-a">Hasta</label>
-                                <span class="input-container"><input id="state_date_to" name="state_date_to" type="date" class="input-type-b"></span>
+                        <div class="wrp-padding-input-c">
+                            <label for="comentarios" class="label-type-a label-padding-d label-position-a">ingresar fecha</label>
+                            <div class="label-position-a">
+                                <div class="wrp-padding-input-c ">
+                                    <label for="state_date_from" class="label-type-a label-padding-a align-center-a">De</label>
+                                    <span class="input-container"><input id="state_date_from" name="state_date_from" type="date" class="input-type-b"></span>
+                                </div>
+                                <div class="wrp-padding-input-c">
+                                    <label for="state_date_to" class="label-type-a label-padding-a align-center-a">Hasta</label>
+                                    <span class="input-container"><input id="state_date_to" name="state_date_to" type="date" class="input-type-b"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="wrp-padding-input-c wrp-btn-a">
-                        <label for="comentarios" class="label-type-a label-padding-a">generar qr</label>
-                        <div>
-                            <img id="qr-image-register">
+                        <div class="wrp-padding-input-c wrp-btn-a">
+                            <label for="comentarios" class="label-type-a label-padding-a">generar qr</label>
+                            <div>
+                                <img id="qr-image-register">
+                            </div>
                         </div>
-                    </div>
-                    <div class="wrp-actions-b">
-                        <span class="actions">
-                            <button type="submit" class="btn-a tbn btn-a-edit">Guardar</button>
-                            <a href="./list.html" class="btn-b tbn">Retornar</a>
-                        </span>
-                    </div>
-                </form>
+                        <div class="wrp-actions-b">
+                            <span class="actions">
+                                <button type="submit" class="btn-a tbn btn-a-edit">Guardar</button>
+                                <a href="./list.html" class="btn-b tbn">Retornar</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
     </div>
 

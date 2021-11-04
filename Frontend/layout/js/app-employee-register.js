@@ -9,7 +9,7 @@ $(document).ready(function() {
         first_name: {
           required: true
         },
-        last_file_delete: {
+        file: {
           required: true,
         },
         doc_num: {
@@ -39,7 +39,7 @@ $(document).ready(function() {
         first_name: {
           required: "Es requerido"
         },
-        last_file_delete: {
+        file: {
           required: "Es requerido"
         },
         doc_num: {
@@ -88,8 +88,10 @@ $(document).ready(function() {
         });
         
         success.done(function(response) {
-            $("#photo_url").prop("value", response.data.photo_url);
-            $("#last_file_delete").prop("value", response.data.photo_url);
+            //alert(JSON.stringify(response.data));
+            $("#photo_url").attr("value", response.data.photo_url);
+            $(".filename").html(response.data.photo_url);
+            $("#last_file_delete").attr("value", response.data.photo_url);
         });
         success.fail(function(response){ 
             Swal.fire({

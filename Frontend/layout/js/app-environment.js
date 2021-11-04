@@ -1,4 +1,4 @@
-var isLocal = false;
+var isLocal = true;
 var REST_API_BASE = '';
 var REST_API_LOGIN = '';
 var WEB_REDIRECT_BEFORE = '';
@@ -10,7 +10,8 @@ var REST_API_EMPLOYEE_READ = '';
 var REST_API_EMPLOYEE_DELETE = '';
 var REST_API_EMPLOYEE_UPLOAD = '';
 var WEB_EMPLOYEE_DETAIL = '';
-var CHART_BASE_PATH_QR = 'https://chart.googleapis.com/chart?choe=UTF-8&chs=300x300&cht=qr&chl=';
+var CHART_BASE_PATH_QR = 'https://api.qrserver.com/v1/create-qr-code/?size=225x225&data=';
+//'https://chart.googleapis.com/chart?chld=L|0&choe=UTF-8&chs=225x225&cht=qr&chl=';
 var WEB_EMPLOYEE_IMAGE = '';
 if(isLocal) {
     
@@ -26,7 +27,7 @@ if(isLocal) {
     WEB_REDIRECT_BEFORE = 'http://localhost:8084/list.html';
     WEB_EMPLOYEE_REGISTER = 'http://localhost:8084/register.html';
     WEB_EMPLOYEE_DETAIL = 'http://localhost:8084/detail.html';
-    WEB_EMPLOYEE_IMAGE = 'http://localhost:8084/uploads/';
+    WEB_EMPLOYEE_IMAGE = 'http://localhost:8083/uploads/';
     
 } else {
 

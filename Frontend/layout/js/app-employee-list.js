@@ -42,14 +42,18 @@ $(document).ready(function() {
     });
 
     var success = get(REST_API_EMPLOYEE_LIST, {});
+    var numOrder = 0;
     success.done(function(response) {
+        
         response['data'].forEach(element => {
+            numOrder = numOrder + 1;
             var html = '';
                 html = `<tr>`
-                html += `<td><span>${element.id} - ${element.first_name}</span></td>`
-                html += `<td><a href="${WEB_EMPLOYEE_REGISTER}?id=${element.id}" class="btn-b">editar</a>`
-                html += `<button data-id="${element.id}" class="btn-c delete-employee" >borrar</button></td>`
-                html += `</tr>`;
+                html += `<td><span>${numOrder} - ${element.first_name}</span></td>`
+                html += `<td class="tdactions" align="right"><a href="${WEB_EMPLOYEE_REGISTER}?id=${element.id}" class="btn-b">editar</a>`
+                html += `<a href="${WEB_EMPLOYEE_DETAIL}?id=${element.id}" class="btn-b">Ver</a>`
+                html += `<button data-id="${element.id}" class="btn-c delete-employee" >borrar</button>`
+                html += `</td></tr>`;
             $(".table-a").append(html);
         });
     });
